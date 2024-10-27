@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        yubarbellBG: "url('./public/YuBarbellSVG.svg')",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
