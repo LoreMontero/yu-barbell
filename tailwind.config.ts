@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        yubarbellBG: "url('./public/YuBarbellSVG.svg')",
+        yubarbellBG: "url('./public/YuBarbellBG.svg')",
       },
       colors: {
         background: "var(--background)",
