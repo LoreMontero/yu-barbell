@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./ui/Navbar";
+import { Inter, Iceberg } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+const iceberg = Iceberg({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,14 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <header className="absolute top-0 p-5 z-50 bg-transparent flex justify-between w-full">
-          <h1>
-            <span className="p-1 bg-red-700 rounded-full px-1">Yu</span> Barbell
+          <h1 className={`text-3xl stroke-1 stroke-black ${iceberg.className}`}>
+            <span className=" bg-red-700 rounded-full px-1">Yu</span> Barbell
           </h1>
           <Navbar />
         </header>
-        <main className="flex flex-col items-center justify-center bg-black">
+        <main className="flex flex-col items-center justify-center bg-background">
           {children}
         </main>
       </body>

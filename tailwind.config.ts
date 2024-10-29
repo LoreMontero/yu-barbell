@@ -12,8 +12,11 @@ const config: Config = {
         yubarbellBG: "url('./public/YuBarbellBG.svg')",
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        text: "#f2ede7",
+        background: "#232323",
+        primary: "#bc002c",
+        accent: "#80736b",
+        secondary: "#74001b",
       },
     },
   },
