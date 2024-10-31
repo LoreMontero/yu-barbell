@@ -1,28 +1,41 @@
 const LiftConverter = () => {
   return (
-    <div className="flex flex-col bg-accent rounded-lg fit-content p-2">
-      <form className="flex flex-col gap-2">
-        <div className="flex bg-background p-4 rounded-md justify-around">
-          <input 
-            type="number"
-            // value={}
-            placeholder="Enter Weight in lbs"
-            // onChange={}
-            className="bg-background"
-          />
-          <button className="bg-black rounded-2xl px-2 py-1">Front Squat</button>
+    <div className="flex flex-col bg-accent rounded-3xl p-3 space-y-4 mt-8">
+      <form className="flex flex-col">
+        <div className="flex justify-between items-center bg-background p-4 rounded-2xl mb-2">
+          <div className="flex flex-col flex-grow">
+            <p className="text-xs">LBS</p>
+            <input
+              type="number"
+              // value={}
+              placeholder="0"
+              // onChange={}
+              className="bg-background text-4xl outline-none appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            />
+          </div>
+          <button className="bg-black rounded-2xl py-2 w-[180px] text-xs">
+            Front Squat
+          </button>
         </div>
-        <div className="flex bg-background p-4 rounded-md justify-around">
-          <input 
-            type="number"
-            placeholder="Enter Weight in lbs"
-            // value={}
-            // onChange={}
-            className="bg-background"
-          />
-          <button className="bg-black rounded-2xl px-2 py-1">Competition Squat</button>
-        </div> 
-        <button className="bg-primary rounded-2xl px-2 py-1">Convert</button>
+
+        <div className="flex justify-between items-center bg-background p-4 rounded-2xl mb-2">
+          <div className="flex flex-col flex-grow">
+            <p className="text-xs">LBS</p>
+            <input
+              type="number"
+              placeholder="0"
+              // value={}
+              // onChange={}
+              className="bg-background text-4xl outline-none appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            />
+          </div>
+          <button className="bg-black rounded-2xl px-1 py-2 w-[180px] text-xs">
+            Competition Squat
+          </button>
+        </div>
+        <button className="w-full bg-secondary hover:bg-primary py-6 rounded-2xl transition-transform duration-300 hover:scale-105">
+          Convert
+        </button>
       </form>
     </div>
   );
