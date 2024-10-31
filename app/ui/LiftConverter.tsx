@@ -1,4 +1,6 @@
 import { ArrowUpDown } from "lucide-react";
+import Image from "next/image";
+import Vector from "../public/Vector.svg";
 
 const LiftConverter = () => {
   return (
@@ -15,8 +17,9 @@ const LiftConverter = () => {
               className="bg-background text-4xl outline-none appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             />
           </div>
-          <button className="bg-black rounded-2xl py-2 w-[180px] text-xs">
+          <button className="flex flex-grow justify-center items-center bg-black rounded-2xl py-2 px-2 text-xs transition-transform ease-in-out duration-300 hover:scale-105">
             Front Squat
+            <Image src={Vector} alt="Vector" className="ml-2" />
           </button>
         </div>
 
@@ -35,8 +38,9 @@ const LiftConverter = () => {
               className="bg-background text-4xl outline-none appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             />
           </div>
-          <button className="bg-black rounded-2xl px-1 py-2 w-[180px] text-xs">
+          <button className="flex flex-grow justify-center items-center bg-black rounded-2xl py-2 px-2 text-xs transition-transform ease-in-out duration-300 hover:scale-105">
             Competition Squat
+            <Image src={Vector} alt="Vector" className="ml-2" />
           </button>
         </div>
         <button className="w-full bg-secondary hover:bg-primary py-6 rounded-2xl transition-transform ease-in-out duration-300 hover:scale-105">
