@@ -22,13 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="absolute top-0 p-5 z-50 bg-transparent flex justify-between w-full">
+        <header className="fixed top-0 p-5 z-50 bg-transparent flex justify-between w-full">
           <h1 className={`text-3xl stroke-1 stroke-black ${iceberg.className}`}>
             <span className=" bg-red-700 rounded-full px-1">Yu</span> Barbell
           </h1>
           <Navbar />
         </header>
-        <main className="flex flex-col justify-center bg-background">
+        <main className="flex flex-col justify-center bg-background text-text">
           {children}
         </main>
       </body>

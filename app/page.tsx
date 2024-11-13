@@ -8,7 +8,7 @@ const iceberg = Iceberg({
 
 export default function Home() {
   return (
-    <section className="bg-yubarbellBG bg-cover bg-no-repeat min-h-[150vh] w-screen flex flex-col items-center">
+    <section className="bg-yubarbell bg-cover bg-no-repeat min-h-[150vh] w-screen flex flex-col items-center">
       <h1 className={`text-5xl ${iceberg.className} text-center mt-24`}>
         Convert <br />
         <span className="text-primary">Your</span> Lifts
