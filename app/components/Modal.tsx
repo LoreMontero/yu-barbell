@@ -23,7 +23,7 @@ const Modal = ({ options, open, closeModal }: ModalProps) => {
           <button
             onClick={closeModal}
             key={option.name}
-            className="flex-col items-center justify-center w-full h-full bg-background hover:bg-gray-400 rounded-lg p-2 text-text"
+            className="flex-col items-center justify-center w-full h-full bg-background hover:bg-accent rounded-lg p-2 text-text"
           >
             {option.name}
           </button>
