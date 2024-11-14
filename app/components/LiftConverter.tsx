@@ -24,6 +24,30 @@ const lifts: Lift[] = [
     name: "Bench Press",
     conversion: 1,
   },
+  {
+    name: "Paused Squat",
+    conversion: 1,
+  },
+  {
+    name: "Paused Deadlift",
+    conversion: 1,
+  },
+  {
+    name: "Larson Press",
+    conversion: 1,
+  },
+  {
+    name: "Goblet Squat",
+    conversion: 1,
+  },
+  {
+    name: "Jefferson Deadlift",
+    conversion: 1,
+  },
+  {
+    name: "Duffalo Press",
+    conversion: 1,
+  },
 ];
 
 const LiftConverter = () => {
