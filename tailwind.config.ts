@@ -17,9 +17,20 @@ const config: Config = {
         primary: "#bc002c",
         accent: "#80736b",
         secondary: "#74001b",
+        bgGradient: "#403935",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }: { addUtilities: any }) {
+      const textStrokeUtilities = {
+        ".text-stroke-black": {
+          "-webkit-text-stroke": "1px black",
+          "text-stroke": "1px black",
+        },
+      };
+      addUtilities(textStrokeUtilities);
+    },
+  ],
 };
 export default config;

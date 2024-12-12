@@ -22,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="fixed top-0 p-5 z-50 bg-transparent flex justify-between w-full">
-          <h1 className={`text-3xl stroke-1 stroke-black ${iceberg.className}`}>
-            <span className=" bg-red-700 rounded-full px-1">Yu</span> Barbell
+        <header className="fixed top-0 p-5 z-50 bg-transparent flex justify-between w-full mb-8">
+          <h1 className={`text-3xl text-stroke-black ${iceberg.className}`}>
+            <span className="bg-primary rounded-full p-1">YU</span> BARBELL
           </h1>
           <Navbar />
         </header>

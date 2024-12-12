@@ -66,14 +66,14 @@ const LiftConverter = () => {
       <div className="flex">
         <button
           onClick={openModal}
-          className="flex flex-grow justify-center items-center bg-background rounded-2xl py-2 px-2 text-xs transition-transform ease-in-out duration-300 hover:scale-105 stroke stroke-white"
+          className="flex flex-grow justify-center items-center bg-background rounded-2xl py-4 px-2 text-xs transition-transform ease-in-out duration-300 hover:scale-105"
         >
           Select a lift
         </button>
-        <button className="flex justify-center items-center bg-primary p-2 w-fit mx-auto rounded-2xl my-2 transition-transform ease-in-out duration-300 hover:scale-105">
-          <ArrowUpDown className="w-5 h-5 rotate-90" />
+        <button className="flex justify-center items-center bg-primary p-4 w-fit rounded-full transition-transform ease-in-out duration-300 hover:scale-105 border-black border">
+          <ArrowUpDown className="w-5 h-5 rotate-90 text-black" />
         </button>
-        <button className="flex flex-grow justify-center items-center bg-background rounded-2xl py-2 px-2 text-xs transition-transform ease-in-out duration-300 hover:scale-105 ">
+        <button className="flex flex-grow justify-center items-center bg-background rounded-2xl py-4 px-2 text-xs transition-transform ease-in-out duration-300 hover:scale-105 ">
           Select a lift
         </button>
       </div>
@@ -87,7 +87,7 @@ const LiftConverter = () => {
               // value={}
               placeholder="0"
               // onChange={}
-              className="bg-background text-4xl text-text placeholder-gray-300 outline-none appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none "
+              className="bg-background text-4xl text-text placeholder-text outline-none appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none "
             />
           </div>
         </div>
