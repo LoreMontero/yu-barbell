@@ -70,6 +70,7 @@ const LiftConverter = () => {
         >
           Select a lift
         </button>
+
         <button className="flex justify-center items-center bg-primary p-4 w-fit rounded-full transition-transform ease-in-out duration-300 hover:scale-105 border-black border">
           <ArrowUpDown className="w-5 h-5 rotate-90 text-black" />
         </button>
