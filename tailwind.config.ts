@@ -18,6 +18,7 @@ const config: Config = {
         accent: "#80736b",
         secondary: "#74001b",
         bgGradient: "#403935",
+        placeholder: "#6b6b6b",
       },
     },
   },

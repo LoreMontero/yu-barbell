@@ -38,14 +38,14 @@ const Modal = ({ options, open, closeModal }: ModalProps) => {
           placeholder="Search..."
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <h3 className="flex justify-start w-full text-sm font-bold text-gray-500 my-4">
+        <h3 className="flex justify-start w-full text-lg font-bold text-placeholder my-4">
           Lifts
         </h3>
         {options.map((option: Lift) => (
           <button
             onClick={closeModal}
             key={option.name}
-            className="flex items-center justify-start w-full h-full bg-background hover:bg-accent rounded-lg px-4 py-2 text-text"
+            className="flex items-center justify-start w-full h-full bg-background hover:bg-placeholder rounded-lg px-4 py-2 text-text"
           >
             {option.name}
           </button>
