@@ -10,8 +10,12 @@ interface ModalProps {
   closeModal: () => void;
 }
 
-const Modal = ({ options, open, closeModal }: ModalProps) => {
+const Modal = ({ options, open, closeModal, handleLiftSelect }: ModalProps) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const filteredOptions = options.filter((option) =>
+    option.name.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
+
   if (!open) return null;
 
   return ReactDOM.createPortal(
@@ -41,15 +45,19 @@ const Modal = ({ options, open, closeModal }: ModalProps) => {
         <h3 className="flex justify-start w-full text-lg font-bold text-placeholder my-4">
           Lifts
         </h3>
-        {options.map((option: Lift) => (
-          <button
-            onClick={closeModal}
-            key={option.name}
-            className="flex items-center justify-start w-full h-full bg-background hover:bg-placeholder rounded-lg px-4 py-2 text-text"
-          >
-            {option.name}
-          </button>
-        ))}
+        {filteredOptions.length === 0 ? (
+          <p className="text-center text-text">No lifts found</p>
+        ) : (
+          filteredOptions.map((option: Lift) => (
+            <button
+              onClick={handleLiftSelect(option)}
+              key={option.name}
+              className="flex items-center justify-start w-full h-full bg-background hover:bg-placeholder rounded-lg px-4 py-2 text-text"
+            >
+              {option.name}
+            </button>
+          ))
+        )}
       </dialog>
     </div>,
     document.body,

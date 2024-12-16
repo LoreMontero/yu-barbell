@@ -2,7 +2,7 @@ import { Lift } from "./interfaces";
 
 export const mainLifts: Lift[] = [
   {
-    name: "High BarSquat",
+    name: "High Bar Squat",
     converstion: 1,
     variation: "squat",
   },

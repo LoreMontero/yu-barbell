@@ -3,62 +3,22 @@
 import { ArrowUpDown } from "lucide-react";
 import { useState } from "react";
 import Modal from "./Modal";
+import Lift from "../lib/interfaces";
+import { mainLifts, Variations } from "../lib/data";
 // import Image from "next/image";
 // import Vector from "../public/Vector.svg";
 
-export interface Lift {
-  name: string;
-  conversion: number;
-}
-
-const lifts: Lift[] = [
-  {
-    name: "Competition Squat",
-    conversion: 1,
-  },
-  {
-    name: "Deadlift",
-    conversion: 1,
-  },
-  {
-    name: "Bench Press",
-    conversion: 1,
-  },
-  {
-    name: "Paused Squat",
-    conversion: 1,
-  },
-  {
-    name: "Paused Deadlift",
-    conversion: 1,
-  },
-  {
-    name: "Larson Press",
-    conversion: 1,
-  },
-  {
-    name: "Goblet Squat",
-    conversion: 1,
-  },
-  {
-    name: "Jefferson Deadlift",
-    conversion: 1,
-  },
-  {
-    name: "Duffalo Press",
-    conversion: 1,
-  },
-];
-
 const LiftConverter = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedLift, setSelectedLift] = useState();
+  const [isMainModalOpen, setIsMainModalOpen] = useState(false);
+  const [isVariationModalOpen, setIsVariationModalOpen] = useState(false);
+  const openMainModal = () => setIsMainModalOpen(true);
+  const closeMainModal = () => setIsMainModalOpen(false);
+  const openVariationModal = () => setIsVariationModalOpen(true);
+  const closeVariationModal = () => setIsVariationModalOpen(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const handleLiftSelect = (lift: Lift) => {
+    setSelectedLift(lift);
   };
 
   return (
@@ -66,7 +26,7 @@ const LiftConverter = () => {
       <div className="flex flex-col space-y-4">
         <div className="flex space-x-4">
           <button
-            onClick={openModal}
+            onClick={openMainModal}
             className="flex justify-center items-center bg-background rounded-2xl py-4 px-6 text-xs transition-transform ease-in-out duration-300 hover:scale-105"
           >
             Select a lift
@@ -93,7 +53,7 @@ const LiftConverter = () => {
 
         <div className="flex space-x-4">
           <button
-            onClick={openModal}
+            onClick={openVariationModal}
             className="flex justify-center items-center bg-background rounded-2xl py-4 px-6 text-xs transition-transform ease-in-out duration-300 hover:scale-105"
           >
             Select a lift
@@ -109,7 +69,18 @@ const LiftConverter = () => {
           </div>
         </div>
       </div>
-      <Modal open={isModalOpen} closeModal={closeModal} options={lifts} />
+      <Modal
+        open={isMainModalOpen}
+        closeModal={closeMainModal}
+        options={mainLifts}
+        handleLiftSelect={handleLiftSelect}
+      />
+      <Modal
+        open={isVariationModalOpen}
+        closeModal={closeVariationModal}
+        options={Variations}
+        handleLiftSelect={handleLiftSelect}
+      />
     </div>
   );
 };
