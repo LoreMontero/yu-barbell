@@ -24,7 +24,8 @@ const LiftConverter = () => {
             onClick={openMainModal}
             className="flex justify-center items-center bg-background rounded-2xl py-4 px-6 text-xs transition-transform ease-in-out duration-300 hover:scale-105"
           >
-            {selectedMainLift?.name ? selectedMainLift.name : "Select a lift"}
+            {selectedMainLift?.name ? selectedMainLift.name : "Select a lift"}{" "}
+            {/* TODO: Fix type errors */}
           </button>
 
           <form className="flex justify-between items-center bg-background p-4 rounded-2xl flex-grow">

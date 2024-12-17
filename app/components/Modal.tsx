@@ -1,5 +1,5 @@
 "use client";
-import { Lift } from "./LiftConverter";
+import { Lift } from "../lib/interfaces";
 import ReactDOM from "react-dom";
 import { XIcon } from "lucide-react";
 import { useState } from "react";
