@@ -3,16 +3,14 @@
 import { ArrowUpDown } from "lucide-react";
 import { useState } from "react";
 import Modal from "./Modal";
-import Lift from "../lib/interfaces";
 import { mainLifts, Variations } from "../lib/data";
-// import Image from "next/image";
-// import Vector from "../public/Vector.svg";
 
 const LiftConverter = () => {
   const [selectedMainLift, setSelectedMainLift] = useState("");
   const [selectedVariationLift, setSelectedVariationLift] = useState("");
   const [isMainModalOpen, setIsMainModalOpen] = useState(false);
   const [isVariationModalOpen, setIsVariationModalOpen] = useState(false);
+  const [value, setValue] = useState(0);
   const openMainModal = () => setIsMainModalOpen(true);
   const closeMainModal = () => setIsMainModalOpen(false);
   const openVariationModal = () => setIsVariationModalOpen(true);
@@ -37,6 +35,7 @@ const LiftConverter = () => {
                   type="number"
                   placeholder="0"
                   className="bg-background text-4xl text-text placeholder-placeholder outline-none appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                  onChange={(e) => setValue(Number(e.target.value))}
                 />
               </div>
               <p className="text-xs">LBS</p>
@@ -61,7 +60,11 @@ const LiftConverter = () => {
             <div className="flex flex-row flex-grow items-center justify-between">
               <div className="flex items-center gap-4">
                 <p className="text-xs w-8">To</p>
-                <div className="text-4xl text-placeholder">0</div>
+                <div className="text-4xl text-placeholder">
+                  {selectedVariationLift!
+                    ? value * selectedVariationLift.converstion
+                    : 0}
+                </div>
               </div>
               <p className="text-xs">LBS</p>
             </div>

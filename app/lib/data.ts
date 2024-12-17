@@ -13,12 +13,12 @@ export const mainLifts: Lift[] = [
   },
   {
     name: "Bench Press",
-    converstion: 2,
+    converstion: 1,
     variation: "bench",
   },
   {
     name: "Deadlift",
-    converstion: 3,
+    converstion: 1,
     variation: "deadlift",
   },
 ];
