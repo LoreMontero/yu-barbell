@@ -8,13 +8,19 @@ interface ModalProps {
   options: Lift[];
   open: boolean;
   closeModal: () => void;
+  setSelectedLift: (lift: Lift) => void;
 }
 
-const Modal = ({ options, open, closeModal, handleLiftSelect }: ModalProps) => {
+const Modal = ({ options, open, closeModal, setSelectedLift }: ModalProps) => {
   const [searchTerm, setSearchTerm] = useState("");
   const filteredOptions = options.filter((option) =>
     option.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
+
+  const handleLiftSelect = (option: Lift) => () => {
+    setSelectedLift(option);
+    closeModal();
+  };
 
   if (!open) return null;
 

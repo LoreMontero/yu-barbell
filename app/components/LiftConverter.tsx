@@ -9,17 +9,14 @@ import { mainLifts, Variations } from "../lib/data";
 // import Vector from "../public/Vector.svg";
 
 const LiftConverter = () => {
-  const [selectedLift, setSelectedLift] = useState();
+  const [selectedMainLift, setSelectedMainLift] = useState("");
+  const [selectedVariationLift, setSelectedVariationLift] = useState("");
   const [isMainModalOpen, setIsMainModalOpen] = useState(false);
   const [isVariationModalOpen, setIsVariationModalOpen] = useState(false);
   const openMainModal = () => setIsMainModalOpen(true);
   const closeMainModal = () => setIsMainModalOpen(false);
   const openVariationModal = () => setIsVariationModalOpen(true);
   const closeVariationModal = () => setIsVariationModalOpen(false);
-
-  const handleLiftSelect = (lift: Lift) => {
-    setSelectedLift(lift);
-  };
 
   return (
     <div className="flex flex-col bg-accent rounded-3xl p-3 space-y-4 mt-8">
@@ -29,7 +26,7 @@ const LiftConverter = () => {
             onClick={openMainModal}
             className="flex justify-center items-center bg-background rounded-2xl py-4 px-6 text-xs transition-transform ease-in-out duration-300 hover:scale-105"
           >
-            Select a lift
+            {selectedMainLift?.name ? selectedMainLift.name : "Select a lift"}
           </button>
 
           <form className="flex justify-between items-center bg-background p-4 rounded-2xl flex-grow">
@@ -56,7 +53,9 @@ const LiftConverter = () => {
             onClick={openVariationModal}
             className="flex justify-center items-center bg-background rounded-2xl py-4 px-6 text-xs transition-transform ease-in-out duration-300 hover:scale-105"
           >
-            Select a lift
+            {selectedVariationLift?.name
+              ? selectedVariationLift.name
+              : "Select a lift"}
           </button>
           <div className="flex justify-between items-center bg-background p-4 rounded-2xl flex-grow">
             <div className="flex flex-row flex-grow items-center justify-between">
@@ -73,13 +72,13 @@ const LiftConverter = () => {
         open={isMainModalOpen}
         closeModal={closeMainModal}
         options={mainLifts}
-        handleLiftSelect={handleLiftSelect}
+        setSelectedLift={setSelectedMainLift}
       />
       <Modal
         open={isVariationModalOpen}
         closeModal={closeVariationModal}
         options={Variations}
-        handleLiftSelect={handleLiftSelect}
+        setSelectedLift={setSelectedVariationLift}
       />
     </div>
   );
