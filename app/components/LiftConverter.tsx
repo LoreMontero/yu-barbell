@@ -3,7 +3,7 @@
 import { ArrowUpDown } from "lucide-react";
 import { useState } from "react";
 import Modal from "./Modal";
-import { mainLifts, Variations } from "../lib/data";
+import { mainLifts, variations } from "../lib/data";
 
 const LiftConverter = () => {
   const [selectedMainLift, setSelectedMainLift] = useState("");
@@ -16,6 +16,10 @@ const LiftConverter = () => {
   const openVariationModal = () => setIsVariationModalOpen(true);
   const closeVariationModal = () => setIsVariationModalOpen(false);
 
+  const filteredVariations = variations.filter(
+    (lift) => lift.variation === selectedMainLift.variation,
+  );
+
   return (
     <div className="flex flex-col bg-accent rounded-3xl p-3 space-y-4 mt-8">
       <div className="flex flex-col space-y-4">
@@ -24,7 +28,7 @@ const LiftConverter = () => {
             onClick={openMainModal}
             className="flex justify-center items-center bg-background rounded-2xl py-4 px-6 text-xs transition-transform ease-in-out duration-300 hover:scale-105"
           >
-            {selectedMainLift?.name ? selectedMainLift.name : "Select a lift"}{" "}
+            {selectedMainLift?.name ? selectedMainLift.name : "Select a lift"}
             {/* TODO: Fix type errors */}
           </button>
 
@@ -81,7 +85,7 @@ const LiftConverter = () => {
       <Modal
         open={isVariationModalOpen}
         closeModal={closeVariationModal}
-        options={Variations}
+        options={filteredVariations}
         setSelectedLift={setSelectedVariationLift}
       />
     </div>

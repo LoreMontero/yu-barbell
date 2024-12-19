@@ -23,7 +23,7 @@ export const mainLifts: Lift[] = [
   },
 ];
 
-export const Variations: Lift[] = [
+export const variations: Lift[] = [
   {
     name: "Pause Squat",
     converstion: 0.9, //This Might be wrong change later
