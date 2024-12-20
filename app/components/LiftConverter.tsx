@@ -2,7 +2,7 @@
 
 import { ArrowUpDown } from "lucide-react";
 import { useState } from "react";
-import Modal from "./Modal";
+import Modal from "./modal";
 import { mainLifts, variations } from "../lib/data";
 import { Lift } from "../lib/interfaces";
 

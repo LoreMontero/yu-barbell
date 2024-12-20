@@ -1,5 +1,5 @@
 import { Iceberg } from "next/font/google";
-import LiftConverter from "./components/LiftConverter";
+import LiftConverter from "./components/liftConverter";
 
 const iceberg = Iceberg({
   weight: "400",
