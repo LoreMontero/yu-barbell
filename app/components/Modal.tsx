@@ -8,7 +8,7 @@ interface ModalProps {
   options: Lift[];
   open: boolean;
   closeModal: () => void;
-  setSelectedLift: (lift: Lift) => void;
+  setSelectedLift: (lift: Lift | null) => void;
 }
 
 const Modal = ({ options, open, closeModal, setSelectedLift }: ModalProps) => {

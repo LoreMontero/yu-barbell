@@ -4,10 +4,12 @@ import { ArrowUpDown } from "lucide-react";
 import { useState } from "react";
 import Modal from "./Modal";
 import { mainLifts, variations } from "../lib/data";
+import { Lift } from "../lib/interfaces";
 
 const LiftConverter = () => {
-  const [selectedMainLift, setSelectedMainLift] = useState("");
-  const [selectedVariationLift, setSelectedVariationLift] = useState("");
+  const [selectedMainLift, setSelectedMainLift] = useState<Lift | null>(null);
+  const [selectedVariationLift, setSelectedVariationLift] =
+    useState<Lift | null>(null);
   const [isMainModalOpen, setIsMainModalOpen] = useState(false);
   const [isVariationModalOpen, setIsVariationModalOpen] = useState(false);
   const [value, setValue] = useState(0);
@@ -17,7 +19,7 @@ const LiftConverter = () => {
   const closeVariationModal = () => setIsVariationModalOpen(false);
 
   const filteredVariations = variations.filter(
-    (lift) => lift.variation === selectedMainLift.variation,
+    (lift) => lift.variation === selectedMainLift?.variation,
   );
 
   return (
@@ -57,7 +59,7 @@ const LiftConverter = () => {
               <div className="flex items-center gap-4">
                 <p className="text-xs w-7">To</p>
                 <div className="text-4xl text-placeholder">
-                  {selectedVariationLift!
+                  {selectedVariationLift?.converstion
                     ? value * selectedVariationLift.converstion
                     : 0}
                 </div>
