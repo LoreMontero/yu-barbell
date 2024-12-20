@@ -10,13 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Yu Barbell",
   description: "Convert Your Lifts",
-  icons: [
-    {
-      url: `${yuBarbellLogo}`,
-      sizes: "32x32",
-      type: "image/png",
-    },
-  ],
+  icons: {
+    icon: "./public/yuBarbellLogo.png",
+  },
 };
 
 export default function RootLayout({
@@ -26,6 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="icon"
+          href={`${yuBarbellLogo}`}
+          type="image/png"
+          sizes="32x32"
+        />
+      </head>
       <body className={`${inter.className} bg-background`}>
         <Navbar />
         <main className="flex flex-col justify-center text-text">
