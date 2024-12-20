@@ -3,12 +3,20 @@ import "./globals.css";
 import Navbar from "./components/navbar";
 import { Inter } from "next/font/google";
 import Footer from "./components/footer";
+import yuBarbellLogo from "./public/yuBarbellLogo.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Yu Barbell",
   description: "Convert Your Lifts",
+  icons: [
+    {
+      url: `${yuBarbellLogo}`,
+      sizes: "32x32",
+      type: "image/png",
+    },
+  ],
 };
 
 export default function RootLayout({
