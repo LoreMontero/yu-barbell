@@ -42,16 +42,15 @@ const LiftConverter = () => {
           </form>
           <button
             onClick={openMainModal}
-            className="flex justify-center items-center bg-background rounded-2xl py-4 px-6 text-xs transition-transform ease-in-out duration-300 hover:scale-105 text-wrap whitespace-nowrap w-28 sm:w-32"
+            className="flex justify-center items-center bg-background rounded-2xl py-4 px-6 text-xs transition-transform ease-in-out duration-300 hover:scale-105 hover:bg-backgroundAccent text-wrap whitespace-nowrap w-28 sm:w-32"
           >
             {selectedMainLift?.name ? selectedMainLift.name : "Select a lift"}
-            {/* TODO: Fix type errors */}
           </button>
         </div>
 
-        <button className="flex justify-center items-center bg-primary p-4 w-fit rounded-full transition-transform ease-in-out duration-300 hover:scale-105 border-black border mx-auto">
+        <div className="flex justify-center items-center bg-primary p-4 w-fit rounded-full border-black border mx-auto">
           <ArrowUpDown className="w-5 h-5 text-black" />
-        </button>
+        </div>
 
         <div className="grid grid-cols-[1fr,auto] gap-4">
           <div className="flex justify-between items-center bg-background p-4 rounded-2xl w-full">
@@ -71,7 +70,7 @@ const LiftConverter = () => {
           </div>
           <button
             onClick={openVariationModal}
-            className="flex justify-center items-center bg-background rounded-2xl py-4 px-6 text-xs transition-transform ease-in-out duration-300 hover:scale-105 text-wrap whitespace-nowrap w-28 sm:w-32"
+            className="flex justify-center items-center bg-background rounded-2xl py-4 px-6 text-xs transition-transform ease-in-out duration-300 hover:scale-105 hover:bg-backgroundAccent text-wrap whitespace-nowrap w-28 sm:w-32"
           >
             {selectedVariationLift?.name
               ? selectedVariationLift.name

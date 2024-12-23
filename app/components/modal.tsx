@@ -37,7 +37,7 @@ const Modal = ({ options, open, closeModal, setSelectedLift }: ModalProps) => {
           <h2 className="text-xl font-bold">Select a lift</h2>
           <button
             onClick={closeModal}
-            className="flex items-center justify-center p-1 hover:bg-placeholder rounded-xl"
+            className="flex items-center justify-center p-1 hover:bg-backgroundAccent rounded-xl transition-transform ease-in-out duration-300 hover:scale-105"
           >
             <XIcon className="w-6 h-6" />
           </button>
