@@ -14,7 +14,7 @@ const config: Config = {
       colors: {
         text: "#f2ede7",
         background: "#232323", // Background
-        backgroundAccent: "#0A0A0A",
+        backgroundAccent: "#171717",
         primary: "#bc002c", // Primary Button
         accent: "#80736b",
         secondary: "#74001b",
