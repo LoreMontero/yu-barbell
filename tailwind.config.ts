@@ -13,12 +13,14 @@ const config: Config = {
       },
       colors: {
         text: "#f2ede7",
-        background: "#232323",
-        primary: "#bc002c",
+        background: "#232323", // Background
+        backgroundAccent: "#0A0A0A",
+        primary: "#bc002c", // Primary Button
         accent: "#80736b",
         secondary: "#74001b",
-        bgGradient: "#403935",
-        placeholder: "#6b6b6b",
+        bgGradient: "#403935", // Background Home Page
+        bgGradient2: "#5D544F", // Background Converter
+        placeholder: "#6b6b6b", // Placeholder Text
       },
     },
   },

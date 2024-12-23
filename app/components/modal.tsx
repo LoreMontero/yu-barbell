@@ -1,7 +1,7 @@
 "use client";
 import { Lift } from "../lib/interfaces";
 import ReactDOM from "react-dom";
-import { XIcon } from "lucide-react";
+import { XIcon, SearchIcon } from "lucide-react";
 import { useState } from "react";
 
 interface ModalProps {
@@ -37,17 +37,20 @@ const Modal = ({ options, open, closeModal, setSelectedLift }: ModalProps) => {
           <h2 className="text-xl font-bold">Select a lift</h2>
           <button
             onClick={closeModal}
-            className="flex items-center justify-center p-1 hover:bg-primary rounded-xl"
+            className="flex items-center justify-center p-1 hover:bg-placeholder rounded-xl"
           >
             <XIcon className="w-6 h-6" />
           </button>
         </div>
-        <input
-          type="text"
-          className="w-full h-full bg-background rounded-lg px-4 py-2 text-text"
-          placeholder="Search..."
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <div className="relative w-full">
+          <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-placeholder w-5 h-5" />
+          <input
+            type="text"
+            className="w-full h-full bg-backgroundAccent rounded-lg pl-10 pr-4 py-2 text-text placeholder:text-placeholder outline-none appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            placeholder="Search lifts"
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
         <h3 className="flex justify-start w-full text-lg font-bold text-placeholder my-4">
           Lifts
         </h3>
@@ -58,7 +61,7 @@ const Modal = ({ options, open, closeModal, setSelectedLift }: ModalProps) => {
             <button
               onClick={handleLiftSelect(option)}
               key={option.name}
-              className="flex items-center justify-start w-full h-full bg-background hover:bg-placeholder rounded-lg px-4 py-2 text-text"
+              className="flex items-center justify-start w-full h-full bg-background hover:bg-primary rounded-lg px-4 py-2 text-text"
             >
               {option.name}
             </button>

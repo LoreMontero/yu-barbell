@@ -23,7 +23,7 @@ const LiftConverter = () => {
   );
 
   return (
-    <div className="flex flex-col bg-accent rounded-3xl p-3 space-y-4 mt-8 mx-4 sm:mx-auto sm:max-w-2xl">
+    <div className="flex flex-col bg-gradient-to-r from-accent to-bgGradient2 rounded-3xl p-3 space-y-4 mt-8 mx-4 sm:mx-auto sm:max-w-2xl drop-shadow-md">
       <div className="flex flex-col space-y-4">
         <div className="grid grid-cols-[1fr,auto] gap-4">
           <form className="flex justify-between items-center bg-background p-4 rounded-2xl w-full">
@@ -58,7 +58,9 @@ const LiftConverter = () => {
             <div className="flex flex-row flex-grow items-center justify-between">
               <div className="flex items-center gap-4">
                 <p className="text-xs w-7">To</p>
-                <div className="text-4xl text-placeholder">
+                <div
+                  className={`text-4xl ${selectedVariationLift?.converstion && value > 0 ? "text-text" : "text-placeholder"}`}
+                >
                   {selectedVariationLift?.converstion
                     ? value * selectedVariationLift.converstion
                     : 0}
