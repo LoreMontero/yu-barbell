@@ -2,7 +2,7 @@
 import { Lift } from "../lib/interfaces";
 import ReactDOM from "react-dom";
 import { XIcon, SearchIcon } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface ModalProps {
   options: Lift[];
@@ -13,6 +13,13 @@ interface ModalProps {
 
 const Modal = ({ options, open, closeModal, setSelectedLift }: ModalProps) => {
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    if (!open) {
+      setSearchTerm("");
+    }
+  }, [open]);
+
   const filteredOptions = options.filter((option) =>
     option.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );

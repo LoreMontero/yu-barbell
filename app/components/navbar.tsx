@@ -11,14 +11,20 @@ const iceberg = Iceberg({
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      const currentScrollPos = window.scrollY;
+
+      // Set background color change
+      setIsScrolled(currentScrollPos > 0);
+
+      // Handle navbar visibility
+      setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+
+      setPrevScrollPos(currentScrollPos);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,13 +32,13 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isScrolled]);
+  }, [prevScrollPos]);
 
   return (
     <header
       className={`fixed top-0 p-5 z-50 flex justify-between w-full mb-8 transition-all duration-300 ${
-        isScrolled ? "bg-accent" : "bg-transparent"
-      }`}
+        isScrolled ? "bg-background" : "bg-transparent"
+      } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <h1
         className={`text-2xl sm:text-3xl text-stroke-black ${iceberg.className}`}
