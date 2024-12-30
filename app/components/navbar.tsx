@@ -1,4 +1,7 @@
+"use client";
+
 import { Iceberg } from "next/font/google";
+import { useState, useEffect } from "react";
 
 // const inter = Inter({ subsets: ["latin"] });
 const iceberg = Iceberg({
@@ -7,8 +10,30 @@ const iceberg = Iceberg({
 });
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isScrolled]);
+
   return (
-    <header className="fixed top-0 p-5 z-50 bg-transparent flex justify-between w-full mb-8">
+    <header
+      className={`fixed top-0 p-5 z-50 flex justify-between w-full mb-8 transition-all duration-300 ${
+        isScrolled ? "bg-accent" : "bg-transparent"
+      }`}
+    >
       <h1
         className={`text-2xl sm:text-3xl text-stroke-black ${iceberg.className}`}
       >
