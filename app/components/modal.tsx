@@ -3,6 +3,7 @@ import { Lift } from "../lib/interfaces";
 import ReactDOM from "react-dom";
 import { XIcon, SearchIcon } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 interface ModalProps {
   options: Lift[];
@@ -13,6 +14,7 @@ interface ModalProps {
 
 const Modal = ({ options, open, closeModal, setSelectedLift }: ModalProps) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     if (!open) {
